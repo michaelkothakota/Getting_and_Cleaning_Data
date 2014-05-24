@@ -1,0 +1,41 @@
+CODEBOOK - GETTING AND CLEANING DATA Project Coursera Course
+
+The purpose of this file is to describe the variables, the dataset and how the data were cleaned for purposes of analysis.
+
+-  The data was obtained from the following site in the form of a zip file below:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+from the following site:
+
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
+-  This data deals with Smartphones and collection on activities of the smartphone users.
+
+  1.  The information about the variables is described in the above link.
+
+Data parsing and cleaning
+
+-  Although the run_analysis.R file is annotated, a brief description of what the script does is outlined in this document
+
+  
+  1.  First the data was downloaded, unzipped and placed in the working directory (*Note - make sure that you read the data from YOUR particular working directory)
+  
+  2.  The features of the data were read into RStudio using the read.table function.  The file was "features.txt.", which was assigned to the variable "features_data"
+      The tables of the training set ("X_train.txt", "y_train.txt", "subject_train.txt) were read into RStudio using the "write.table" function
+      Then the test set was read in using the same method
+  
+  3.  Variables were then extracted from the features dataset using the "with" command and the "gsub" command.
+  
+  4.  Using these particular transofrmations, this information was pulled from the training and test sets as well
+  
+  5.  The variables in the columns were combined using the cbind function for both the training and test sets, resulting in the dataset clean_data
+  
+  6.  Once this was completed for all files, the rbind function was used to merge the datasets and the activity names were concatenated into the dataset using the "c" command.
+  
+  7.  Two data files were written using the write.csv function, which were "clean_global" and "clean_average".  Clean average contained all of the averaged variables and grouped the observations
+  
+  8.  In order to upload the dataset on the coursera site, the write.table function was used (*Note:  This is not in the run_analysis.R program).
+
+
